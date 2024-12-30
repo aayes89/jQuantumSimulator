@@ -1,12 +1,11 @@
-
 package quantum;
 
 /**
  *
  * @author Slam
  */
-
 public class QuantumState {
+
     private double[] real;
     private double[] imag;
     private int numQubits;
@@ -33,8 +32,11 @@ public class QuantumState {
 
     public void printState() {
         System.out.println("Estado cuántico:");
+
         for (int i = 0; i < real.length; i++) {
-            System.out.printf("|%s> -> %.2f + %.2fi\n", Integer.toBinaryString(i), real[i], imag[i]);
+            double probability = Math.pow(real[i], 2) + Math.pow(imag[i], 2);
+            System.out.printf("|%s> -> %.2f + %.2fi (%.2f%%)\n", Integer.toBinaryString(i), real[i], imag[i], probability * 100);
+            //System.out.printf("|%s> -> %.2f + %.2fi\n", Integer.toBinaryString(i), real[i], imag[i]);
         }
     }
 }
