@@ -14,7 +14,7 @@
 * Visualización <b>printState</b>: Es útil para depurar y entender el estado cuántico.
 
 <b> Compuertas Implementadas: </b>
-<b>Hadamard</b>, <b>CNOT</b>, <b>Pauli-X</b>, <b>Pauli-Z</b>, <b>CCX (Toffoli)</b>, <b>Rx</b>, <b>SWAP</b> y <b>T</b>.
+<b>Hadamard</b>, <b>CNOT</b>, <b>Pauli-X</b>, <b>Pauli-Z</b>, <b>CCX (Toffoli)</b>, <b>Rx</b>, <b>SWAP</b>, <b>T</b> y <b>QFT</b>.
 
 # Por implementar y/o mejorar:
 1. Implementar Algoritmos Cuánticos:
