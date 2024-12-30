@@ -1,12 +1,15 @@
-
 package quantum.gates;
 
-import quantum.QuantumGate;
 import quantum.QuantumState;
+import quantum.QuantumGate;
 
 /**
- *
  * @author Slam
+ * 
+ * Implementación de la puerta CNOT (Controlled-NOT)
+ *
+ * Qubit de control: Si está en |1>, aplica NOT al qubit objetivo. Qubit
+ * objetivo: Cambia de estado si el control está en |1>.
  */
 public class CNOTGate extends QuantumGate {
 
@@ -20,46 +23,24 @@ public class CNOTGate extends QuantumGate {
 
     @Override
     public void apply(QuantumState state) {
+        int numQubits = state.getNumQubits();
         double[] real = state.getRealPart();
         double[] imag = state.getImagPart();
-        int numQubits = state.getNumQubits();
-        int size = (int) Math.pow(2, numQubits);
 
-        // Iteramos por todos los estados posibles
-        for (int i = 0; i < size; i++) {
-            // Verificamos si el bit de control está activado (estado |1⟩)
+        // Iterar sobre todos los posibles estados en la superposición
+        for (int i = 0; i < real.length; i++) {
+            // Verificar si el control está en |1>
             if (((i >> controlQubit) & 1) == 1) {
-                // Calculamos el índice del estado objetivo
+                // Calcular el índice objetivo
                 int targetIndex = i ^ (1 << targetQubit);
 
-                // Intercambiamos las amplitudes de los estados
-                double realTemp = real[i];
-                double imagTemp = imag[i];
-
+                // Intercambiar amplitudes entre el índice actual y el índice objetivo
+                double tempReal = real[i];
+                double tempImag = imag[i];
                 real[i] = real[targetIndex];
                 imag[i] = imag[targetIndex];
-
-                real[targetIndex] = realTemp;
-                imag[targetIndex] = imagTemp;
-            }
-        }
-    }
-
-    // CNOT gate
-    public void applyCNOT(int control, int target, double[] real, double[] imag) {
-        int size = real.length;
-        for (int i = 0; i < size; i++) {
-            if ((i & (1 << control)) != 0) {
-                int targetBit = 1 << target;
-                int idx1 = i;
-                int idx2 = i ^ targetBit;
-
-                double realTemp = real[idx1];
-                double imagTemp = imag[idx1];
-                real[idx1] = real[idx2];
-                imag[idx1] = imag[idx2];
-                real[idx2] = realTemp;
-                imag[idx2] = imagTemp;
+                real[targetIndex] = tempReal;
+                imag[targetIndex] = tempImag;
             }
         }
     }
