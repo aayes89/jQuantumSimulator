@@ -4,8 +4,12 @@ import quantum.QuantumGate;
 import quantum.QuantumState;
 
 /**
- *
  * @author Slam
+ * 
+ * Implementación de la puerta T (Gate T)
+ * 
+ * Operación: Aplica una fase específica (π/4) al estado cuántico.
+ * Qubit objetivo: Afecta solo al estado correspondiente al índice dado.
  */
 public class T extends QuantumGate {
 
