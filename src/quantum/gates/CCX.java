@@ -40,6 +40,7 @@ public class CCX extends QuantumGate {
     }
 
     @Override
+    @Override
     public void apply(QuantumState state) {
         double[] real = state.getRealPart();
         double[] imag = state.getImagPart();
