@@ -4,8 +4,12 @@ import quantum.QuantumGate;
 import quantum.QuantumState;
 
 /**
- *
  * @author Slam
+ * 
+ * Implementación de la puerta Pauli-Z
+ * 
+ * Operación: Aplica un cambio de fase (multiplica por -1) al estado |1>.
+ * Qubit objetivo: Afecta su fase en función de su estado.
  */
 public class PauliZ extends QuantumGate{
     private int targetQubit;
