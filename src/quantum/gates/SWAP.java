@@ -4,8 +4,12 @@ import quantum.QuantumGate;
 import quantum.QuantumState;
 
 /**
- *
  * @author Slam
+ * 
+  * Implementación de la puerta SWAP
+ * 
+ * Operación: Intercambia los estados de dos qubits.
+ * Qubits objetivo: Se invierten los valores de ambos qubits dados.
  */
 public class SWAP extends QuantumGate {
 
