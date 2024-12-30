@@ -32,6 +32,21 @@ public class QuantumCircuit {
         state.printState();
     }
 
+    // Decoherencia por amplitud (idea básica)
+    private void applyAmplitudeDamping(QuantumState state, double gamma) {
+        double[] real = state.getRealPart();
+        double[] imag = state.getImagPart();
+        int size = real.length;
+
+        for (int i = 0; i < size; i++) {
+            double prob = Math.pow(real[i], 2) + Math.pow(imag[i], 2);
+            if (Math.random() < gamma * prob) {
+                real[i] *= Math.sqrt(1 - gamma);
+                imag[i] *= Math.sqrt(1 - gamma);
+            }
+        }
+    }
+
     public int[] measure() {
         double[] real = state.getRealPart();
         double[] imag = state.getImagPart();
@@ -104,6 +119,6 @@ public class QuantumCircuit {
 
     public void printClassicState() {
         int[] classicalState = measure();
-        System.out.println("Estado colapsado: " + Arrays.toString(classicalState));
+        System.out.println("Estado colapsado: " + Arrays.toString(classicalState) + "\n");
     }
 }
