@@ -26,13 +26,13 @@
 2. Agregar Decoherencia.
 3. Visualización del Circuito.
 <code>
-         ┌───┐     <br>
-    q_0: ┤ H ├──■──<br>
-         └───┘┌─┴─┐<br>
-    q_1: ─────┤ X ├<br>
-              └───┘<br>
+         ┌───┐       <br>
+    q_0: ┤ H ├──■────<br>
+         └───┘┌─┴─┐  <br>
+    q_1: ─────┤ X ├──<br>
+              └───┘  <br>
 </code>
-4. Añadir Simulación de Medición y Colapso del Estado.
+4. Añadir Simulación de Medición y Colapso del Estado.<br>
 5. Optimización del Simulador.
 
 # Sobre el proyecto
