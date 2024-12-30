@@ -5,8 +5,13 @@ import quantum.QuantumGate;
 import quantum.QuantumState;
 
 /**
- *
  * @author Slam
+ * 
+ * Implementación de la puerta Rx
+ * 
+ * Operación: Realiza una rotación sobre el eje X en la esfera de Bloch.
+ * Qubit objetivo: Se aplica una transformación específica al estado cuántico.
+ * Parámetro theta: Ángulo de rotación.
  */
 public class RX extends QuantumGate{
     private int targetQubit;
