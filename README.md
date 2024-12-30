@@ -18,7 +18,7 @@
 
 # Por implementar y/o mejorar:
 1. Implementar Algoritmos Cuánticos:
-   -    Algoritmo de Grover: Para búsqueda no estructurada en O(sqrt(N)).
+   -    Algoritmo de Grover: Para búsqueda no estructurada en O($`\sqrt{N}`$).
    -    Algoritmo de Deutsch-Josza: Para verificar si una función es constante o balanceada con un solo paso.
    -    Soporte para puertas paramétricas y Transformada de Fourier Cuántica (QFT).
    -    Algoritmo de Shor: Para factorización de números enteros. (Requiere trabajar con transformadas de Fourier cuánticas).
