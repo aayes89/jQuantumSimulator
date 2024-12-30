@@ -25,6 +25,13 @@
    -    Soporte para Estados entrelazados (Bell y GHZ)
 2. Agregar Decoherencia.
 3. Visualización del Circuito.
+<code>
+         ┌───┐     <br>
+    q_0: ┤ H ├──■──<br>
+         └───┘┌─┴─┐<br>
+    q_1: ─────┤ X ├<br>
+              └───┘<br>
+</code>
 4. Añadir Simulación de Medición y Colapso del Estado.
 5. Optimización del Simulador.
 
