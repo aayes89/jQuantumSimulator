@@ -5,8 +5,12 @@ import quantum.QuantumGate;
 import quantum.QuantumState;
 
 /**
- *
  * @author Slam
+ * 
+ * Implementación de la puerta CCX (Toffoli)
+ * 
+ * Qubits de control: Dos qubits que deben estar en |1> para activar el cambio.
+ * Qubit objetivo: Cambia de estado (aplica NOT) si ambos controles están en |1>.
  */
 public class CCX extends QuantumGate {
 
@@ -39,7 +43,6 @@ public class CCX extends QuantumGate {
         }
     }
 
-    @Override
     @Override
     public void apply(QuantumState state) {
         double[] real = state.getRealPart();
